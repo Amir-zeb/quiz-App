@@ -1,3 +1,16 @@
+.active{
+    width: 100%;
+    padding: 5px;
+}
 .active:hover{
     background-color: rgb(186, 186, 190);
+}
+.para{
+    background-color: indianred;
+}
+#quiz-time-left{
+    float: right;
+}
+.side{
+    float: left;
 }
