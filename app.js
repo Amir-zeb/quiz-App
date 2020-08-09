@@ -39,7 +39,7 @@ function showQ(e){
     //sh header
     var headerDiv=document.getElementById("header");
     var qNum=document.createElement("div")
-    qNum.setAttribute("class","side")
+    qNum.setAttribute("class","col-md-6")
         var x;
         x=qCount;
         x++;
@@ -48,6 +48,7 @@ function showQ(e){
     headerDiv.appendChild(qNum);
     var qtimer=document.createElement('div')
     qtimer.setAttribute("id",'quiz-time-left')
+    qtimer.setAttribute("class",'col-md-6')
     headerDiv.appendChild(qtimer)
 
 }
@@ -63,12 +64,11 @@ function next(){
     var headerDiv=document.getElementById("header");
     headerDiv.innerHTML="";
     if(window.value===questions[qCount].ans){
-        score++;
-        console.log('Score');
+        score+=10;
+        correctans++;
     }
     else{
         wrongans++;
-        console.log('Wrong-ans');
     }
     qCount++;
     if(qCount==questions.length){
@@ -78,12 +78,16 @@ function next(){
         var h1txt=document.createTextNode("Result")
         var br=document.createElement("br")
         var p1=document.createElement("p")
-        var p1txt=document.createTextNode("Correct Ans " +score)
+        var p1txt=document.createTextNode("Correct Ans " +correctans)
         var p2=document.createElement("p")
         var p2txt=document.createTextNode("Wrong Ans " +wrongans)
-        p1.setAttribute("class","para")
+        var p3=document.createElement("p")
+        var p3txt=document.createTextNode("Scores " +score)
         h1.appendChild(h1txt)
         header.appendChild(h1)
+        header.appendChild(br)
+        p3.appendChild(p3txt)
+        header.appendChild(p3)
         header.appendChild(br)
         p1.appendChild(p1txt)
         header.appendChild(p1)
@@ -104,7 +108,7 @@ function check(e){
 
 
 
-var total_seconds = 30*1;
+var total_seconds = 300*1;
 var c_minutes = parseInt(total_seconds/60);
 var c_seconds = parseInt(total_seconds%60);
 

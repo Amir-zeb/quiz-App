@@ -5,12 +5,6 @@
 .active:hover{
     background-color: rgb(186, 186, 190);
 }
-.para{
-    background-color: indianred;
-}
 #quiz-time-left{
-    float: right;
-}
-.side{
-    float: left;
+    text-align: end;
 }
